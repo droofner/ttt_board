@@ -92,5 +92,11 @@ class TestBoard <Minitest::Test
  		marker = "X"
  		board.ttt_board =["O"," ","X","O","X","X","X","O"," "]
  		assert_equal(true, board.game_won?(marker))
-	end
+ 	end
+ 	def test_Xs_right_to_left_diagnal_row_returns_false_for_win
+ 		board = Board.new()
+ 		marker = "X"
+ 		board.ttt_board =["O"," ","X","O","O","X","X","O"," "]
+ 		assert_equal(false, board.game_won?(marker))
+ 	end
 end
